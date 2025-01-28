@@ -47,12 +47,3 @@
     </div>
 </div>
 @endsection
-
-<script>
-    // Pour afficher le nom du fichier choisi
-    function updateFileName() {
-        const input = document.getElementById('image');
-        const fileName = input.files.length > 0 ? input.files[0].name : 'Aucun fichier choisi';
-        document.getElementById('file-name').textContent = fileName;
-    }
-</script>
