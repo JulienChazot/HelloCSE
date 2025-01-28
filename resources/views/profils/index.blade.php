@@ -15,7 +15,7 @@
             @foreach($profiles as $profile)
             <div class="sm:flex bg-[#e5c78f] rounded-xl p-4 items-center justify-between my-8">
                 <div class="flex items-center">
-                    <img src="{{ asset('storage/' . $profile->image) }}" alt="Image de {{ $profile->first_name }}" class="rounded-full me-3 w-[50px] h-[50px]">
+                <img src="{{ $profile->image ? asset('storage/' . $profile->image) : asset('images/profils/profil.png') }}" alt="Image de profil" class="rounded-full me-3 w-[50px] h-[50px]">
                     <div>
                         <strong>{{ $profile->first_name }} {{ $profile->last_name }}</strong>
                         @auth
