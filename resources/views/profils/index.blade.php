@@ -7,10 +7,11 @@
 </div>
 <div class="darksection">
     <div class="container" style="min-height: calc(100vh - 287px);">
-        <a href="{{ route('profils.create') }}" class="bg-sky-200 rounded-lg font-bold p-2.5 mb-3">
-            Créer un profil
-        </a>
-
+        @auth
+            <a href="{{ route('profils.create') }}" class="bg-sky-200 rounded-lg font-bold p-2.5 mb-3">
+                Créer un profil
+            </a>
+        @endauth
         <div class="list-group mt-10">
             @foreach($profiles as $profile)
             <div class="sm:flex bg-[#e5c78f] rounded-xl p-4 items-center justify-between my-8">
