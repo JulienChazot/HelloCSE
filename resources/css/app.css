@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @source "../views";
 
+/* Ici j'ai informé des quelques div qui sont communes à plusieurs pages, pour éviter de CTRL C CTRL V de pages en pages */
+
 .clearsection{
     background-color: #e5c78f;
     position: relative;

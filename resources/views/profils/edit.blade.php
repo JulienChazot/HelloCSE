@@ -7,23 +7,21 @@
 
 <div class="darksection">
     <div class="container">
+         <!-- Je créer un formulaire, j'informe son action qui est la redirection vers sa route qui amène vers son controller -->
         <form action="{{ route('profils.update', $profile->id) }}" method="POST" enctype="multipart/form-data" class="bg-sky-200 rounded-xl p-4 max-w-4xl mx-auto">
             @csrf
             @method('PUT')
 
-            <!-- Prénom -->
             <div class="form-group mb-4">
                 <label for="first_name">Prénom</label>
                 <input type="text" class="form-control w-full p-2 border rounded" id="first_name" name="first_name" value="{{ $profile->first_name }}" required>
             </div>
 
-            <!-- Nom -->
             <div class="form-group mb-4">
                 <label for="last_name">Nom</label>
                 <input type="text" class="form-control w-full p-2 border rounded" id="last_name" name="last_name" value="{{ $profile->last_name }}" required>
             </div>
 
-            <!-- Image -->
             <div class="form-group mb-4">
                 <label for="image">Image</label>
                 <input type="file" class="form-control w-full p-2 border rounded" id="image" name="image">
@@ -32,7 +30,6 @@
                 @endif
             </div>
 
-            <!-- Statut -->
             <div class="form-group mb-4">
                 <label for="status">Statut</label>
                 <select class="form-control w-full p-2 border rounded" id="status" name="status" required>

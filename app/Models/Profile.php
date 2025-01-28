@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Profile extends Model
 {
     use HasFactory;
-
+    // On informe de la strucutre de base d'un Profil
     protected $table = 'profiles';
 
     protected $fillable = [

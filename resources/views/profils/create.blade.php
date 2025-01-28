@@ -5,11 +5,13 @@
 </div>
 <div class="darksection">
     <div class="container">
+                    <!-- Je créer un formulaire, j'informe son action qui est la redirection vers sa route qui amène vers son controller -->
         <form action="{{ route('profils.store') }}" method="POST" enctype="multipart/form-data" class="bg-sky-200 rounded-xl p-4 max-w-4xl mx-auto">
             @csrf
 
             <div class="form-group mb-4">
                 <label for="first_name">Prénom</label>
+                <!-- J'informe pour chaque input son type et j'écris required à la fin si l'information est obligatoire -->
                 <input type="text" class="form-control w-full p-2 border rounded" id="first_name" name="first_name" required>
             </div>
 

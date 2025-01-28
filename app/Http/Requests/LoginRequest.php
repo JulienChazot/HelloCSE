@@ -23,6 +23,7 @@ class LoginRequest extends FormRequest
      */
     public function rules()
     {
+         // On mets une sécurité en plus pour les informations d'authentification (permet d'éviter les requetes direct dans les identifiants)
         return [
             'email' => 'required|email',         
             'password' => 'required|string|min:8', 

@@ -1,4 +1,5 @@
-<navbar>
+<!-- Ici je fais le modèle de ma navbar -->
+ <navbar>
     <div class="bg-sky-200 w-full shadow-md h-[100px] flex items-center px-4 justify-between">
         <div class="flex items-center">
             <div class="h-full flex items-center p-5">

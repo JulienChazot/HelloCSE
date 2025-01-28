@@ -19,13 +19,14 @@ class AuthController extends Controller
             'email' => 'required|email',
             'password' => 'required',
         ]);
-
+        // On vérifie que l'email et le mot de passe haché correspondent bien au même compte
         $administrator = Administrator::where('email', $request->email)->first();
+        // Si c'est OK, on connecte
         if ($administrator && Hash::check($request->password, $administrator->password)) {
             Auth::login($administrator); 
             return redirect()->route('home'); 
         }
-
+        // Sinon on mets une erreur
         return back()->withErrors(['email' => 'Identifiants invalides']);
     }
 
@@ -36,7 +37,7 @@ class AuthController extends Controller
             'name' => 'required|string|max:255',
             'password' => 'required|confirmed|min:8',
         ]);
-
+        // Une fois les informations entrées, on créer un nouvel administrator dans notre BDD avec les informations entrées
         $admin = new Administrator();
         $admin->email = $request->email;
         $admin->name = $request->name;

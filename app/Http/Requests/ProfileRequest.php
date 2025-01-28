@@ -23,6 +23,7 @@ class ProfileRequest extends FormRequest
      */
     public function rules()
     {
+         // On mets une sécurité en plus pour les informations d'authentification (permet d'éviter les requetes direct dans les identifiants)
         return [
             'first_name' => 'required|string|max:255',
             'last_name' => 'required|string|max:255',

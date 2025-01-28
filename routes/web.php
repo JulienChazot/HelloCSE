@@ -17,6 +17,7 @@ use App\Http\Controllers\ProfileController;
 
 /*
 GET
+Permet l'affichage
 */
 
 Route::get('/', function () {
@@ -37,6 +38,7 @@ Route::get('/profils/create', [ProfileController::class, 'create'])->name('profi
 
 /*
 POST
+Permet une action
 */
 
 Route::post('/login', [AuthController::class, 'login'])->name('login.submit');
@@ -48,14 +50,17 @@ Route::post('/logout', function () {
 Route::post('/register-admin', [AuthController::class, 'registerAdmin'])->name('register.admin');
 
 Route::post('/profils', [ProfileController::class, 'store'])->name('profils.store');
+
 /*
 PUT
+Permet les modifications
 */ 
 
 Route::put('/profils/{id}', [ProfileController::class, 'update'])->name('profils.update');
 
 /*
 DELETE
+Permet les suppressions
 */
 
 Route::delete('/profils/{id}', [ProfileController::class, 'destroy'])->name('profils.destroy');

@@ -23,6 +23,7 @@ class RegisterRequest extends FormRequest
      */
     public function rules()
     {
+         // On mets une sécurité en plus pour les informations d'authentification (permet d'éviter les requetes direct dans les identifiants)
         return [
             'name' => 'required|string|max:255',                   
             'email' => 'required|email|unique:administrators,email', 

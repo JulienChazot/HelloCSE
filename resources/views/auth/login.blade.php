@@ -9,6 +9,7 @@
         <div class="container flex justify-between items-start">
             <div class="connexion w-full md:w-1/2 p-10 bg-sky-200 rounded-lg mr-4">
             <h2>Se connecter</h2>
+            <!-- Je créer un formulaire, j'informe son action qui est la redirection vers sa route qui amène vers son controller -->
                 <form method="POST" action="{{ route('login.submit') }}">
                     @csrf
                     <div>
@@ -25,6 +26,7 @@
 
             <div class="newaccount w-full md:w-1/2 p-10 bg-sky-200 rounded-lg ml-4">
                 <h2>Créer un compte</h2>
+                <!-- Je créer un formulaire, j'informe son action qui est la redirection vers sa route qui amène vers son controller -->
                 <form method="POST" action="{{ route('register.admin') }}">
                     @csrf
                     <div>

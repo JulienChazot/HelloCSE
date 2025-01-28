@@ -14,6 +14,7 @@ class AdministratorSeeder extends Seeder
      */
     public function run()
     {
+        // Seeder sont des exemples des données qu'on peut entrer en BDD, ils servent pour mettre despremières  données depuis une requete SQL
         Administrator::create([
             'email' => 'admin@example.com',
             'name' => 'Admin User',

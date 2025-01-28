@@ -7,16 +7,16 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 
 class ProfileFactory extends Factory
 {
-    // Définir le modèle associé à la factory
     protected $model = Profile::class;
 
     /**
-     * Définir l'état par défaut du modèle
+     * 
      *
      * @return array
      */
     public function definition()
     {
+        // On créé de faux profils afin d'enrichir la BDD, utile pour les tests
         return [
             'first_name' => $this->faker->firstName,
             'last_name' => $this->faker->lastName,

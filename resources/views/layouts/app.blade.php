@@ -7,6 +7,7 @@
     <title>Test technique Julien CHAZOT</title>
 </head>
 <body>
+    <!-- Je créer un formulaire, j'informe son action qui est la redirection vers sa route qui amène vers son controller -->
     @include('layouts/navbar')
         <div class="clearsection">
             <div class="container">

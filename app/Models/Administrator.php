@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 class Administrator extends Authenticatable
 {
     use HasFactory;
-
+    // On informe de la strucutre de base d'un admin
     protected $table = 'administrators';
 
     protected $fillable = ['name', 'email', 'password'];
