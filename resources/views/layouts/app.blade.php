@@ -8,8 +8,10 @@
 </head>
 <body>
     @include('layouts/navbar')
-        <div class="p-20">
-            @yield('content')
+        <div class="clearsection">
+            <div class="container">
+                @yield('content')
+            </div>
         </div>
     @include('layouts/footer')
 </body>
