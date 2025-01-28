@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
     <h1>
-        Accueil
+        Login
     </h1>
 @endsection
