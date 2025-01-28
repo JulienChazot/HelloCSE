@@ -12,10 +12,20 @@
         </div>
 
         <div class="text-center">
-            <a href="/login" class="flex flex-col items-center hover:text-gray-600">
-                <img src="/images/login.png" alt="Connexion" class="w-10 h-10">
-                <span class="text-sm font-medium">Se connecter</span>
-            </a>
+            @auth('web')
+                <form action="{{ route('logout') }}" method="POST" class="flex flex-col items-center hover:text-gray-600">
+                    @csrf 
+                    <button type="submit" class="flex flex-col items-center">
+                        <img src="/images/logout.png" alt="Déconnexion" class="w-10 h-10">
+                        <span class="text-sm font-medium">Se déconnecter</span>
+                    </button>
+                </form>
+            @else
+                <a href="{{ route('login') }}" class="flex flex-col items-center hover:text-gray-600">
+                    <img src="/images/login.png" alt="Connexion" class="w-10 h-10">
+                    <span class="text-sm font-medium">Se connecter</span>
+                </a>
+            @endauth
         </div>
     </div>
 </navbar>

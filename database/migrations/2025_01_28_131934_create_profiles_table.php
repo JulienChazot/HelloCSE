@@ -17,10 +17,10 @@ class CreateProfilesTable extends Migration
             $table->id();
             $table->string('first_name');
             $table->string('last_name');
-            $table->string('image'); // Stocke le chemin vers l'image
+            $table->string('image'); 
             $table->enum('status', ['inactive', 'pending', 'active'])->default('inactive');
-            $table->foreignId('administrator_id')->nullable()->constrained('administrators')->onDelete('set null'); // Clé étrangère vers 'administrators'
-            $table->timestamps(); // Ajoute les colonnes 'created_at' et 'updated_at'
+            $table->foreignId('administrator_id')->nullable()->constrained('administrators')->onDelete('set null'); 
+            $table->timestamps();
         });
     }
 

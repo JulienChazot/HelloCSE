@@ -6,8 +6,10 @@
 </div> 
 </div>
 <div class="darksection">
-    <div class="container">
-        
+    <div class="container h-full">
+        <a href="{{ route('profils.index') }}">
+            Les profils
+        </a>
     </div>
 </div>
 @endsection
