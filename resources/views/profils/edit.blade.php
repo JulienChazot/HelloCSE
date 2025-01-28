@@ -1,45 +1,58 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <h1>Modifier le Profil</h1>
+<h1>Modifier le Profil</h1>
+</div>
+</div>
 
-    <form action="{{ route('profils.update', $profile->id) }}" method="POST" enctype="multipart/form-data">
-        @csrf
-        @method('PUT')
+<div class="darksection">
+    <div class="container">
+        <form action="{{ route('profils.update', $profile->id) }}" method="POST" enctype="multipart/form-data" class="bg-sky-200 rounded-xl p-4 max-w-4xl mx-auto">
+            @csrf
+            @method('PUT')
 
-        <!-- Prénom -->
-        <div class="form-group">
-            <label for="first_name">Prénom</label>
-            <input type="text" class="form-control" id="first_name" name="first_name" value="{{ $profile->first_name }}" required>
-        </div>
+            <!-- Prénom -->
+            <div class="form-group mb-4">
+                <label for="first_name">Prénom</label>
+                <input type="text" class="form-control w-full p-2 border rounded" id="first_name" name="first_name" value="{{ $profile->first_name }}" required>
+            </div>
 
-        <!-- Nom -->
-        <div class="form-group">
-            <label for="last_name">Nom</label>
-            <input type="text" class="form-control" id="last_name" name="last_name" value="{{ $profile->last_name }}" required>
-        </div>
+            <!-- Nom -->
+            <div class="form-group mb-4">
+                <label for="last_name">Nom</label>
+                <input type="text" class="form-control w-full p-2 border rounded" id="last_name" name="last_name" value="{{ $profile->last_name }}" required>
+            </div>
 
-        <!-- Image -->
-        <div class="form-group">
-            <label for="image">Image</label>
-            <input type="file" class="form-control" id="image" name="image">
-            @if($profile->image)
-            <img src="{{ asset('storage/' . $profile->image) }}" alt="Image de {{ $profile->first_name }}" class="rounded-circle me-3" width="50" height="50">
-            @endif
-        </div>
+            <!-- Image -->
+            <div class="form-group mb-4">
+                <label for="image">Image</label>
+                <input type="file" class="form-control w-full p-2 border rounded" id="image" name="image">
+                @if($profile->image)
+                <img src="{{ asset('storage/' . $profile->image) }}" alt="Image de {{ $profile->first_name }}" class="rounded-full me-3 w-[50px] h-[50px] mt-5">
+                @endif
+            </div>
 
-        <!-- Statut -->
-        <div class="form-group">
-            <label for="status">Statut</label>
-            <select class="form-control" id="status" name="status" required>
-                <option value="active" {{ $profile->status == 'active' ? 'selected' : '' }}>Actif</option>
-                <option value="pending" {{ $profile->status == 'pending' ? 'selected' : '' }}>En attente</option>
-                <option value="inactive" {{ $profile->status == 'inactive' ? 'selected' : '' }}>Inactif</option>
-            </select>
-        </div>
-
-        <button type="submit" class="btn btn-primary">Mettre à jour</button>
-    </form>
+            <!-- Statut -->
+            <div class="form-group mb-4">
+                <label for="status">Statut</label>
+                <select class="form-control w-full p-2 border rounded" id="status" name="status" required>
+                    <option value="active" {{ $profile->status == 'active' ? 'selected' : '' }}>Actif</option>
+                    <option value="pending" {{ $profile->status == 'pending' ? 'selected' : '' }}>En attente</option>
+                    <option value="inactive" {{ $profile->status == 'inactive' ? 'selected' : '' }}>Inactif</option>
+                </select>
+            </div>
+            <a href="{{ route('profils.index') }}" class="bg-gray-400 text-white p-2 rounded">Retour</a>
+            <button type="submit" class="mt-3 bg-[#b38e4a] text-white p-2 rounded">Mettre à jour</button>
+        </form>
+    </div>
 </div>
 @endsection
+
+<script>
+    // Pour afficher le nom du fichier choisi
+    function updateFileName() {
+        const input = document.getElementById('image');
+        const fileName = input.files.length > 0 ? input.files[0].name : 'Aucun fichier choisi';
+        document.getElementById('file-name').textContent = fileName;
+    }
+</script>

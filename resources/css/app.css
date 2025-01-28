@@ -9,6 +9,7 @@
 .darksection{
     background-color: #1a4061;
     position: relative;
+    min-height: calc(100vh - 287px);;
 }
 
 .container{
@@ -24,4 +25,11 @@ h1{
     color: #168ebd;
     font-weight: bold;
     text-decoration: underline;
+}
+
+h2{
+    color: #b38e4a;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
 }

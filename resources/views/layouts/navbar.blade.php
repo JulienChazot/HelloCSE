@@ -6,7 +6,7 @@
                     <img src="/images/hellocse.svg" alt="Logo HelloCSE" class="h-full">
                 </a>
             </div>
-            <div class="ml-[50px] font-bold text-[20px]">
+            <div class="ml-[50px] font-bold sm:text-[16px] text-[0px] md:text-[20px]">
                 Test technique HelloCSE - Julien Chazot
             </div>
         </div>
@@ -17,7 +17,7 @@
                     @csrf 
                     <button type="submit" class="flex flex-col items-center">
                         <img src="/images/logout.png" alt="Déconnexion" class="w-10 h-10">
-                        <span class="text-sm font-medium">Se déconnecter</span>
+                        <span class="md:text-sm text-[10px] font-medium">Se déconnecter</span>
                     </button>
                 </form>
             @else

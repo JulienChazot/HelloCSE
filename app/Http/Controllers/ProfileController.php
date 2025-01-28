@@ -11,7 +11,7 @@ class ProfileController extends Controller
 {
     public function index()
     {
-        $profiles = Profile::where('status', 'active')->get();
+        $profiles = Profile::all();
 
         return view('profils.index', compact('profiles'));
     }
